@@ -8,7 +8,7 @@
 - 熟练使用 koa、koa-router，有相关项目开发经验
 - 熟练使用 proxyman、charles 等抓包工具，掌握常见的网络协议
 - 熟悉 bash、shell，可编写 shell 脚本解决重复性工作
-<!-- - 有 react-native 开发经验，了解 app 构建、发布等上架流程 -->
+<!-- - 有 react-native 开发经验，了解    app 构建、发布等上架流程 -->
 <!-- - 有一定小程序经验，掌握一套 rn 编译 h5 及小程序方案 -->
 
 ## 项目经验
