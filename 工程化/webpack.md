@@ -43,19 +43,24 @@ plugin
 使用 webpack-bundle-analyzer 查看打包后生成的 bundle 体积分析
 
 - cdn
-图片压缩 base64 （移动端工程会跑脚本把本地图片上传阿里云 oss 做 cdn 加速）
+  图片压缩 base64 （移动端工程会跑脚本把本地图片上传阿里云 oss 做 cdn 加速）
 
 代码压缩
 optimization.minimizer 中初始化 CssMinimizerPlugin、TerserWebpackPlugin
 
 - js 压缩 TerserWebpackPlugin（生产模式会自动开启）
 - css 压缩 optimization.minimizer 定义压缩插件(CssMinimizerPlugin)、
- 按需加载
+  按需加载
 
 代码分离
 
 - js 分离，SplitChunksPlugin 插件开箱即用，可以将公共的依赖模块提取到已有的入口 chunk 中，或者提取到一个新生成的 chunk。
 - css 分离，MiniCssExtractPlugin 插件将 CSS 提取到单独的文件中，为每个包含 CSS 的 JS 文件创建一个 CSS 文件，并且支持 CSS 和 SourceMaps 的按需加载。
+
+tree-Shaking
+
+- js webpack5 自带
+- css PurgeCSSPlugin
 
 2、提高构建速度
 
