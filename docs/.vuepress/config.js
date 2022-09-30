@@ -8,15 +8,15 @@ module.exports = {
         children: [
           {
             title: 'Http 协议',
-            path: 'network/Http.md',
+            path: 'network/http.md',
           },
           {
             title: 'Https 协议',
-            path: 'network/Https.md',
+            path: 'network/https.md',
           },
           {
             title: 'TCP 协议',
-            path: 'network/Tcp.md',
+            path: 'network/tcp.md',
           },
         ],
       },
