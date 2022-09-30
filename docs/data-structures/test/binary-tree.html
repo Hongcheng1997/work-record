@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Node(data, left, right) {
+        this.data = data;
+        this.left = left;
+        this.right = right;
+      }
+
+      Node.prototype = {
+        show: function () {
+          console.log(this.data);
+        },
+      };
+
+      function Tree() {
+        this.root = null;
+      }
+
+      Tree.prototype = {
+        insert: function (data) {
+          const node = new Node(data, null, null);
+          if (!this.root) {
+            this.root = node;
+            return;
+          }
+          let current = this.root;
+          while (current) {
+            if (data < current.data) {
+              if (current.left) {
+                current = current.left;
+              } else {
+                current.left = node;
+                return;
+              }
+            } else {
+              if (current.right) {
+                current = current.right;
+              } else {
+                current.right = node;
+                return;
+              }
+            }
+          }
+        },
+        preOrder: function (node) {
+          if (node) {
+            node.show();
+            this.preOrder(node.left);
+            this.preOrder(node.right);
+          }
+        },
+        middleOrder: function (node) {
+          if (node) {
+            this.middleOrder(node.left);
+            node.show();
+            this.middleOrder(node.right);
+          }
+        },
+        laterOrder: function (node) {
+          if (node) {
+            this.laterOrder(node.left);
+            this.laterOrder(node.right);
+            node.show();
+          }
+        },
+        getMin: function () {
+          let current = this.root;
+          while (current) {
+            if (!current.left) {
+              return current;
+            }
+            current = current.left;
+          }
+        },
+        getMax: function () {
+          let current = this.root;
+          while (current) {
+            if (!current.right) {
+              return current;
+            }
+            current = current.right;
+          }
+        },
+        getDeep: function (node, deep) {
+          deep = deep || 0;
+          if (node == null) {
+            return deep;
+          }
+          deep++;
+          var dleft = this.getDeep(node.left, deep);
+          var dright = this.getDeep(node.right, deep);
+          return Math.max(dleft, dright);
+        },
+      };
+
+      var t = new Tree();
+      t.insert(3);
+      t.insert(8);
+      t.insert(1);
+      t.insert(2);
+      t.insert(5);
+      t.insert(7);
+      t.insert(6);
+      t.insert(0);
+      console.log(t);
+    </script>
+  </body>
+</html>

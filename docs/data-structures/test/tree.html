@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let tree = [
+        {
+          id: '1',
+          title: '节点1',
+          children: [
+            {
+              id: '1-1',
+              title: '节点1-1',
+            },
+            {
+              id: '1-2',
+              title: '节点1-2',
+            },
+          ],
+        },
+        {
+          id: '2',
+          title: '节点2',
+          children: [
+            {
+              id: '2-1',
+              title: '节点2-1',
+            },
+          ],
+        },
+      ];
+
+      function rangeTree(tree, arr = []) {
+        let node,
+          list = [...tree];
+        while ((node = list.shift())) {
+          arr.push(node.id);
+          node.children && list.push(...node.children);
+        }
+        console.log(arr);
+        return arr;
+      }
+      rangeTree(tree);
+
+      function deepTree(tree, arr = []) {
+        tree.forEach((item) => {
+          arr.push(item.id);
+          item.children && deepTree(item.children, arr);
+        });
+        return arr;
+      }
+      console.log(deepTree(tree));
+    </script>
+
+    <script>
+      function listToTree(data) {
+        let map = {};
+        let treeData = [];
+
+        data.forEach((item) => {
+          map[item.id] = item;
+        });
+
+        for (key in map) {
+          const item = map[key];
+          if (map[item.parentId]) {
+            if (!map[item.parentId].children) {
+              map[item.parentId].children = [];
+            }
+            map[item.parentId].children.push(item);
+          } else {
+            treeData.push(item);
+          }
+        }
+
+        return treeData;
+      }
+
+      let list = [
+        { id: 1, title: 'child1', parentId: 0 },
+        { id: 2, title: 'child2', parentId: 0 },
+        { id: 6, title: 'child2_1', parentId: 2 },
+        { id: 4, title: 'child1_1', parentId: 1 },
+        { id: 5, title: 'child1_2', parentId: 1 },
+        { id: 3, title: 'child3', parentId: 0 },
+        { id: 7, title: 'child3_1', parentId: 3 },
+        { id: 8, title: 'child3_1', parentId: 4 },
+      ];
+
+      console.log(listToTree(list));
+    </script>
+  </body>
+</html>

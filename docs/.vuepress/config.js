@@ -20,6 +20,19 @@ module.exports = {
           },
         ],
       },
+      {
+        title: '数据结构与算法',
+        children: [
+          {
+            title: '树',
+            path: 'data-structures/tree.md',
+          },
+          {
+            title: '二叉树',
+            path: 'data-structures/binary-tree.md',
+          },
+        ],
+      },
     ],
   },
   base: '/work-record/',
