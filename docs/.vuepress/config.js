@@ -24,6 +24,14 @@ module.exports = {
         title: '数据结构与算法',
         children: [
           {
+            title: '栈',
+            path: 'data-structures/stack.md',
+          },
+          {
+            title: '队列',
+            path: 'data-structures/queue.md',
+          },
+          {
             title: '树',
             path: 'data-structures/tree.md',
           },

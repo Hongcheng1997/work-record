@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack</title>
+  </head>
+  <body>
+    <script>
+      class Stack {
+        constructor() {
+          this.arr = [];
+        }
+
+        insert(data) {
+          this.arr.push(data);
+        }
+
+        delete() {
+          this.arr.pop();
+        }
+
+        toString() {
+          return this.arr.toString();
+        }
+      }
+
+      const list = new Stack();
+
+      list.insert(1);
+      list.insert(2);
+      list.insert(3);
+      console.log(list.toString());
+      list.delete();
+      console.log(list.toString());
+    </script>
+  </body>
+</html>
