@@ -41,6 +41,24 @@ module.exports = {
           },
         ],
       },
+      {
+        title: '浏览器相关',
+        children: [
+          {
+            title: '浏览器缓存',
+            path: 'browser/cache.md',
+          },
+        ],
+      },
+      {
+        title: '项目工程化',
+        children: [
+          {
+            title: '关于构建工具的一些思考',
+            path: '工程化/打包构建的思考.md',
+          },
+        ],
+      },
     ],
   },
   base: '/work-record/',
