@@ -4,6 +4,19 @@ module.exports = {
   themeConfig: {
     sidebar: [
       {
+        title: '前端基础',
+        children: [
+          // {
+          //   title: '基础相关',
+          //   path: '前端基础/前端基础.md',
+          // },
+          {
+            title: '模块化发展历程',
+            path: '前端基础/模块化.md',
+          },
+        ],
+      },
+      {
         title: '网络协议',
         children: [
           {
@@ -56,6 +69,10 @@ module.exports = {
           {
             title: '关于构建工具的一些思考',
             path: '工程化/打包构建的思考.md',
+          },
+          {
+            title: 'webpack 相关',
+            path: '工程化/webpack.md',
           },
         ],
       },

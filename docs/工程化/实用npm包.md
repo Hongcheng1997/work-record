@@ -1,6 +1,0 @@
-- got // 服务端 http 封装包
-- fs-extra // fs 扩展
-- chalk、ora // 控制台风格化
-- koa-morgan 输出网路访问日志，可根据输出的日志优化项目
-- koa-bodyparser 接收 post 请求参数
-- koa-ejs 服务端渲染模板
