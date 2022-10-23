@@ -34,7 +34,7 @@ module.exports = {
         ],
       },
       {
-        title: '数据结构与算法',
+        title: '数据结构',
         children: [
           {
             title: '栈',
@@ -51,6 +51,20 @@ module.exports = {
           {
             title: '二叉树',
             path: 'data-structures/binary-tree.md',
+          },
+        ],
+      },
+      {
+        title: '算法分类',
+        children: [
+          {
+            title: '排序',
+            children: [
+              {
+                title: '快排',
+                path: '算法/排序/quickSort.md',
+              },
+            ],
           },
         ],
       },
