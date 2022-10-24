@@ -62,7 +62,11 @@ module.exports = {
             children: [
               {
                 title: '快排',
-                path: '算法/排序/quickSort.md',
+                path: '算法分类/排序/quickSort.md',
+              },
+              {
+                title: '冒泡',
+                path: '算法分类/排序/bubbleSort.md',
               },
             ],
           },

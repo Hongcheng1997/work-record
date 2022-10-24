@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>快排</title>
+  </head>
+  <body>
+    <script>
+      const arr = [3, 4, 2, 1, 5, 8, 7];
+      //   function quickSort(array) {
+      //     if (array.length < 2) {
+      //       return array;
+      //     }
+      //     const target = array[0];
+      //     const left = [];
+      //     const right = [];
+      //     for (let i = 1; i < array.length; i++) {
+      //       if (array[i] > target) {
+      //         right.push(array[i]);
+      //       } else {
+      //         left.push(array[i]);
+      //       }
+      //     }
+      //     return [...quickSort(left), target, ...quickSort(right)];
+      //   }
+
+      function quickSort(array) {
+        function recursion(array, start = 0, end = array.length - 1) {
+          if (end - start < 1) {
+            return;
+          }
+          const target = array[start];
+          let l = start;
+          let r = end;
+          while (l < r) {
+            while (l < r && array[r] >= target) {
+              r--;
+            }
+            array[l] = array[r];
+            while (l < r && array[l] < target) {
+              l++;
+            }
+            array[r] = array[l];
+          }
+          array[l] = target;
+          recursion(array, start, l - 1);
+          recursion(array, l + 1, end);
+          return array;
+        }
+        return recursion(array);
+      }
+
+      // console.log(quickSort(arr));
+    </script>
+
+    <script>
+      function bubbleSort(array) {
+        for (let i = 0; i < array.length; i++) {
+          let complete = true;
+          for (let j = 0; j < array.length - 1 - i; j++) {
+            if (array[j] > array[j + 1]) {
+              [array[j], array[j + 1]] = [array[j + 1], array[j]];
+              complete = false;
+            }
+          }
+          if (complete) break;
+        }
+        return array;
+      }
+      console.log(bubbleSort(arr));
+    </script>
+  </body>
+</html>
