@@ -70,6 +70,15 @@ module.exports = {
               },
             ],
           },
+          {
+            title: '贪心算法',
+            children: [
+              {
+                title: '分发饼干',
+                path: '算法分类/贪心算法/分发饼干.md',
+              },
+            ],
+          },
         ],
       },
       {

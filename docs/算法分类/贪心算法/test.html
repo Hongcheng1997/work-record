@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function findContentChildren(g, s) {
+        g = g.sort();
+        s = s.sort();
+        let num = 0;
+        let child = 0;
+        let cookie = 0;
+
+        while (child < g.length && cookie < s.length) {
+          if (g[child] <= s[cookie]) {
+            num += 1;
+            child += 1;
+          }
+          cookie += 1;
+        }
+        return num;
+      }
+
+      const num = findContentChildren([1, 2, 4, 3], [1, 2]);
+      console.log(num);
+    </script>
+  </body>
+</html>
