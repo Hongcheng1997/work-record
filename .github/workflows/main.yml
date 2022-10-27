@@ -28,7 +28,7 @@ jobs:
         run: npm i pnpm@latest -g
 
       - name: Build
-        run: pnpm install && pnpm run docs:build
+        run: pnpm install && pnpm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
