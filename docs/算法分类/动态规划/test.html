@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var rob = function (nums) {
+        var len = nums.length;
+        if (len < 2) {
+          return nums[len - 1] ? nums[len - 1] : 0;
+        }
+        var current = [nums[0], Math.max(nums[0], nums[1])];
+        for (var k = 2; k < len; k++) {
+          current[k] = Math.max(current[k - 2] + nums[k], current[k - 1]);
+        }
+        return current[len - 1];
+      };
+
+      console.log(rob([2, 7, 9, 3, 1, 10]));
+    </script>
+  </body>
+</html>
